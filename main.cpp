@@ -4,7 +4,7 @@
 #include <map>
 
 std::string name = "CalculatorApp ";
-std::string version = "v0.1\n";
+std::string version = "v0.2\n";
 
 void welcome() {std::cout << name << version << std::endl;}
 
