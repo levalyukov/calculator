@@ -1,45 +1,51 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <map>
 
 std::string name = "CalculatorApp ";
 std::string version = "v0.1\n";
 
-void welcome() {
-	std::cout << name << version << std::endl;
-}
-
-int add(float a, float b) {return a + b;}
-int subtract(float a, float b) {return a - b;}
-int multiply(float a, float b) {return a * b;}
-int division(float a, float b) {return a / b;}
+void welcome() {std::cout << name << version << std::endl;}
 
 int main() {
-	welcome();
+	double x;
+	double y;
+	double result;
 
-	std::string a;
-	std::string b;
-	std::string math_operator;
-
-	std::cout << "Input a: ";
-	std::getline(std::cin, a);
-	std::cout << "Input b: ";
-	std::getline(std::cin, b);
-	std::cout << "Input math operator: ";
-	std::getline(std::cin, math_operator);
+	char mathOperator;
 	
-	if (math_operator == "+") {
-		std::cout << "Result: " << add(std::stof(a), std::stof(b)) << std::endl;
+	std::string a = std::to_string(x);
+	std::string b = std::to_string(mathOperator);
+	std::string c = std::to_string(y);
+	std::string d = std::to_string(result);
+
+	std::cout << "Input: ";
+	std::getline(std::cin, a);
+	std::cout << "Operator: ";
+	std::getline(std::cin, b);
+	std::cout << "Input: ";
+	std::getline(std::cin, c);
+
+	mathOperator = b.at(0);
+	
+	switch (mathOperator) {
+		case '+':
+			result = stod(a) + stod(c);
+			break;
+		case '-':
+			result = stod(a) - stod(c);
+			break;
+		case '*':
+			result = stod(a) * stod(c);
+			break;
+		case '/':
+			result = stod(a) / stod(c);
+			break;
+		default:
+			std::cout << "Error: Invalid mathematical operator.";
+			break;
 	}
-	else if (math_operator == "-") {
-		std::cout << "Result: " << subtract(std::stof(a), std::stof(b)) << std::endl;
-	}
-	else if (math_operator == "*") {
-		std::cout << "Result: " << multiply(std::stof(a), std::stof(b)) << std::endl;
-	}
-	else if (math_operator == "/") {
-		std::cout << "Result: " << division(std::stof(a), std::stof(b)) << std::endl;
-	}
-	else {
-		std::cout << "Error: Invalid mathematical operator.";
-	}
+
+	std::cout << std::fixed << "Result: " << stod(a) << " " << mathOperator << " " << stod(c) << " = " << result << std::endl;
 }
