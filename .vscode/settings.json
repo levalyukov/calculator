@@ -51,7 +51,8 @@
         "string": "cpp",
         "map": "cpp",
         "xtree": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "variant": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
