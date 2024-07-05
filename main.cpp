@@ -49,7 +49,7 @@ int main() {
 
 		std::cout << "Enter first number: ";
 		std::getline(std::cin, a);
-		std::cout << "Operator: ";
+		std::cout << "Enter math operator: ";
 		std::getline(std::cin, b);
 		std::cout << "Enter second number: ";
 		std::getline(std::cin, c);
