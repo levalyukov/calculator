@@ -31,6 +31,10 @@ bool isDouble(const std::string& str) {
 	catch (const std::out_of_range& e) {return false;}
 }
 
+bool check(const std::string& a, const std::string& c) {
+	return (isInteger(a) && isDouble(a)) && (isInteger(c) && isDouble(c));
+}
+
 int main() {
 	welcome();
 
@@ -50,13 +54,8 @@ int main() {
 		std::cout << "Enter second number: ";
 		std::getline(std::cin, c);
 
-		if (isInteger(a)) {goto calculation;} 
-		else if (isDouble(a)) {goto calculation;} 
-		else {std::cout << "Error: X is a string.\n" << std::endl; goto app;}
-
-		if (isInteger(c)) {goto calculation;} 
-		else if (isDouble(c)) {goto calculation;} 
-		else {std::cout << "Error: Y is a string.\n" << std::endl; goto app;}
+		if (check(a,c)) {} 
+		else {std::cout << "Error: Invalid values.\n" << std::endl; goto app;}
 
 	calculation:
 		mathOperator = b.at(0);
