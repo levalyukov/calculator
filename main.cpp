@@ -5,8 +5,8 @@
 #include <string>
 #include <map>
 
-std::string name = "CalculatorApp ";
-std::string version = "v0.4 \n";
+std::string name = "\nCalculatorApp ";
+std::string version = "v0.5 \n";
 std::string formuls = "Available mathematical operators: +, -, *, / \n";
 
 void welcome() {std::cout << name << version << formuls << std::endl;}
