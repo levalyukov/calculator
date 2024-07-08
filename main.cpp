@@ -54,14 +54,12 @@ int main() {
 		std::cout << "Enter math operator or command: ";
 		std::getline(std::cin, b);
 
-		if (b != "exit") {
-			if (b != "sin" && b != "cos") {
-				std::cout << "Enter first value: ";
-				std::getline(std::cin, a);
-				std::cout << "Enter second value: ";
-				std::getline(std::cin, c);
-			} else {std::cout << "Enter value: "; std::getline(std::cin, a); c = std::to_string(0);}
-		} else {goto exit_app;}
+		if (b != "sin" && b != "cos") {
+			std::cout << "Enter first value: ";
+			std::getline(std::cin, a);
+			std::cout << "Enter second value: ";
+			std::getline(std::cin, c);
+		} else {std::cout << "Enter value: "; std::getline(std::cin, a); c = std::to_string(0);}
 
 		if (check(a,c)) {} 
 		else {std::cout << "Error: Invalid values.\n" << std::endl; goto app;}
