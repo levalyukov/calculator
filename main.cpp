@@ -8,8 +8,8 @@
 #define PI 3.14159265
 
 std::string name = "\nCalculatorApp ";
-std::string version = "v0.6";
-std::string availableOperators = "Available mathematical operators: '+', '-', '*', '/', 'sin', 'cos', | Commands: 'exit'\n";
+std::string version = "v0.7";
+std::string availableOperators = "Available mathematical operators: '+', '-', '*', '/', 'sin', 'cos', 'pow' | Commands: 'exit'\n";
 
 void welcome() {std::cout << name << version << std::endl;}
 void formuls() {std::cout << availableOperators << std::endl;}
@@ -97,6 +97,11 @@ int main() {
 				result = sin(stod(a)*PI/180);
 				goto result;
 				break;
+				
+			case 'p': // pow
+				result = pow(stod(a),stod(c));
+				goto result;
+				break;
 
 			case 'e': // exit the app
 				goto exit_app;
@@ -113,6 +118,8 @@ int main() {
 			std::cout << std::fixed << "Result: " << "sin" << "(" << stod(a) <<")" << " = " << result << "\n" << std::endl;
 		} else if (b == "cos") {
 			std::cout << std::fixed << "Result: " << "cos" << "(" << stod(a) <<")" << " = " << result << "\n" << std::endl;
+		} else if (b == "pow") {
+			std::cout << std::fixed << "Result: " << stod(a) << " ^ " << stod(c) << " = " << result << "\n" << std::endl;
 		} else {
 			std::cout << std::fixed << "Result: " << stod(a) << " " << mathOperator << " " << stod(c) << " = " << result << "\n" << std::endl;
 		}
