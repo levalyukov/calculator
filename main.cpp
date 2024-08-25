@@ -1,131 +1,141 @@
 #include <iostream>
-#include <iomanip>
-#include <sstream>
 #include <string>
-#include <cmath>
-#include <map>
+#include <math.h>
 
-#define PI 3.14159265
-
-std::string name = "\nCalculatorApp ";
-std::string version = "v0.7";
-std::string availableOperators = "Available mathematical operators: '+', '-', '*', '/', 'sin', 'cos', 'pow' | Commands: 'exit'\n";
-
-void welcome() {std::cout << name << version << std::endl;}
-void formuls() {std::cout << availableOperators << std::endl;}
-
-bool isInteger(const std::string& str) {
-    try {
-        std::size_t pos;
-        std::stoi(str, &pos);
-        return pos == str.length();
-    } 
-	catch (const std::invalid_argument& e) {return false;} 
-	catch (const std::out_of_range& e) {return false;}
-}
-
-bool isDouble(const std::string& str) {
-    try {
-        std::size_t pos;
-        std::stod(str, &pos);
-        return pos == str.length();
-	} 
-	catch (const std::invalid_argument& e) {return false;} 
-	catch (const std::out_of_range& e) {return false;}
-}
-
-bool check(const std::string& a, const std::string& c) {
-	return (isInteger(a) || isDouble(a)) && (isInteger(c) || isDouble(c));
-}
+using namespace std;
+const double PI = 3.141592653589793;
 
 int main() {
-	welcome();
+	string name = "\nCalculatorApp";
+	string version = "v0.8\n";
+	string operators = "'+', '-', '*', '/', 'sin', 'cos', 'tan', 'pow' | Commands: 'help', 'about', 'exit'";
 
-	app:
-		formuls();
+	cout << name << " " << version;
 
-		char mathOperator;
-		double x,y,result;
+	while (true) {
+		double x, y, result;
+		string op, first_value, second_value;
 
-		std::string a = std::to_string(x);
-		std::string b = std::to_string(mathOperator);
-		std::string c = std::to_string(y);
+		cout << "\nAvailable  mathematical operators: " << operators << "\n" << endl;
+		cout << "Enter math operator or command: ";
+		getline(cin, op);
 
-		std::cout << "Enter math operator or command: ";
-		std::getline(std::cin, b);
+		if (op != "help" && op != "about" && op != "exit") {
+			if (op != "sin" && op != "cos" && op != "tan") {
+				cout << "Enter first value: ";
+				getline(cin, first_value);
+				cout << "Enter second value: ";
+				getline(cin, second_value);
+			}
+			else {
+				cout << "Enter first value: ";
+				getline(cin, first_value);
+			}
 
-		if (b != "sin" && b != "cos") {
-			std::cout << "Enter first value: ";
-			std::getline(std::cin, a);
-			std::cout << "Enter second value: ";
-			std::getline(std::cin, c);
-		} else {std::cout << "Enter value: "; std::getline(std::cin, a); c = std::to_string(0);}
+			if (op != "sin" && op != "cos" && op != "tan") {
+				try {
+					x = stod(first_value);
+					y = stod(second_value);
+				} catch (invalid_argument& e) {
+					cout << "[ERROR] Invalid number format." << endl;
+					continue;
+				}
+			} else {
+				try {
+					x = stod(first_value);
+				} catch (invalid_argument& e) {
+					cout << "[ERROR] Invalid number format." << endl;
+					continue;
+				}
+			}
 
-		if (check(a,c)) {} 
-		else {std::cout << "Error: Invalid values.\n" << std::endl; goto app;}
+			if (op == "+") {
+				result = x + y;
+				cout << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
+				cout << "------\n";
+			}
 
-	calculation:
-		mathOperator = b.at(0);
+			else if (op == "-") {
+				result = x - y;
+				cout << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
+				cout << "------\n";
+			}
 
-		switch (mathOperator) {
-			case '+': // add
-				result = stod(a) + stod(c);
-				goto result;
-				break;
-				
-			case '-': // subtract
-				result = stod(a) - stod(c);
-				goto result;
-				break;
-				
-			case '*': // multiply
-				result = stod(a) * stod(c);
-				goto result;
-				break;
+			else if (op == "*") {
+				result = x * y;
+				cout << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
+				cout << "------\n";
+			}
 
-			case '/': // divide
-				result = stod(a) / stod(c);
-				goto result;
-				break;
+			else if (op == "/") {
+				if (y != 0) {
+					result = x / y;
+					cout << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
+					cout << "------\n";
+				}
+				else {
+					cout << "[ERROR] Division by zero is impossible." << endl;
+					cout << "------\n";
+				}
+			}
 
-			case 's': // sinus
-				result = sin(stod(a)*PI/180);
-				goto result;
-				break;
+			else if (op == "sin") {
+				result = sin(x * PI / 180);
+				cout << "Result: " << "sin(" << x << "°)" << " = " << result << endl;
+				cout << "------\n";
+			}
 
-			case 'c': // cosinus
-				result = sin(stod(a)*PI/180);
-				goto result;
-				break;
-				
-			case 'p': // pow
-				result = pow(stod(a),stod(c));
-				goto result;
-				break;
+			else if (op == "cos") {
+				result = cos(x * PI / 180);
+				cout << "Result: " << "cos(" << x << "°)" << " = " << result << endl;
+				cout << "------\n";
+			}
 
-			case 'e': // exit the app
-				goto exit_app;
-				break;
+			else if (op == "tan") {
+				result = tan(x * PI / 180);
+				cout << "Result: " << "tan(" << x << "°)" << " = " << result << endl;
+				cout << "------\n";
+			}
 
-			default:
-				std::cout << "Error: Invalid mathematical operator.\n" << std::endl;
-				goto app;
-				break;
+			else if (op == "pow") {
+				result = pow(x, y);
+				cout << "Result: " << first_value << "^" << second_value << " = " << result << endl;
+				cout << "------\n";
+			}
+
+			else {
+				cout << "[ERROR] Invalid mathematical operator." << endl;
+			}
 		}
 
-	result:
-		if (b == "sin") {
-			std::cout << std::fixed << "Result: " << "sin" << "(" << stod(a) <<")" << " = " << result << "\n" << std::endl;
-		} else if (b == "cos") {
-			std::cout << std::fixed << "Result: " << "cos" << "(" << stod(a) <<")" << " = " << result << "\n" << std::endl;
-		} else if (b == "pow") {
-			std::cout << std::fixed << "Result: " << stod(a) << " ^ " << stod(c) << " = " << result << "\n" << std::endl;
-		} else {
-			std::cout << std::fixed << "Result: " << stod(a) << " " << mathOperator << " " << stod(c) << " = " << result << "\n" << std::endl;
+		else {
+			if (op == "help") {
+				cout << "\n* Mathematicals operators *\n";
+				cout << "'+': The addition operator. Example: 5 + 5 = 10\n";
+				cout << "'-': The subtraction operator. Example: 10 - 5 = 5\n";
+				cout << "'*': The multiplication operator. Example: 10 * 5 = 50\n";
+				cout << "'/': The division operator. Example: 10 + 2 = 5\n";
+				cout <<"'sin': The sinusoidal operator. Example: sin(90°) = 1\n";
+				cout <<"'cos': The cosine operator. Example: cos(90°) = 0\n";
+				cout <<"'tan': The tangent operator. Example: tan(45°) = 1\n";
+				cout <<"'pow': Exponentiation. Example: 5 ^ 5 = 3125\n";
+				cout << "------\n";
+			}
+			else if (op == "about") {
+				cout << name << " " << version << endl;
+				cout << "Programming language: C++\n";
+				cout << "GitHub: levalyukov/CalculatorApp-Cpp\n";
+				cout << "Thank you for using our calculator. ❤️\n";
+				cout << "------\n";
+			}
+			else if (op == "exit") {
+				break;
+			}
+			else {
+				cout << "[ERROR] Invalid command.";
+			}
 		}
-		std::cout << "------" << std::endl;
-		goto app;
-
-	exit_app:
-		return 0;
+	}
+	
+	return 0;
 }
