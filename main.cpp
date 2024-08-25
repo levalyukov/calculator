@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	string name = "\nCalculatorApp";
 	string version = "v0.8\n";
-	string operators = "'+', '-', '*', '/', 'sin', 'cos', 'tan', 'pow' | Commands: 'help', 'about', 'exit'";
+	string operators = "'+', '-', '*', '/', 'sin', 'cos', 'tg', 'pow' | Commands: 'help', 'about', 'exit'";
 
 	cout << name << " " << version;
 
@@ -21,7 +21,7 @@ int main() {
 		getline(cin, op);
 
 		if (op != "help" && op != "about" && op != "exit") {
-			if (op != "sin" && op != "cos" && op != "tan") {
+			if (op != "sin" && op != "cos" && op != "tg") {
 				cout << "Enter first value: ";
 				getline(cin, first_value);
 				cout << "Enter second value: ";
@@ -32,7 +32,7 @@ int main() {
 				getline(cin, first_value);
 			}
 
-			if (op != "sin" && op != "cos" && op != "tan") {
+			if (op != "sin" && op != "cos" && op != "tg") {
 				try {
 					x = stod(first_value);
 					y = stod(second_value);
@@ -91,9 +91,9 @@ int main() {
 				cout << "------\n";
 			}
 
-			else if (op == "tan") {
+			else if (op == "tg") {
 				result = tan(x * PI / 180);
-				cout << fixed << "Result: " << "tan(" << x << "°)" << " = " << result << endl;
+				cout << fixed << "Result: " << "tg(" << x << "°)" << " = " << result << endl;
 				cout << "------\n";
 			}
 
