@@ -3,7 +3,7 @@
 #include <math.h>
 
 using namespace std;
-const double PI = 3.141592653589793;
+#define PI 3.14159265
 
 int main() {
 	string name = "\nCalculatorApp";
@@ -51,26 +51,26 @@ int main() {
 
 			if (op == "+") {
 				result = x + y;
-				cout << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
+				cout << fixed << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
 				cout << "------\n";
 			}
 
 			else if (op == "-") {
 				result = x - y;
-				cout << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
+				cout << fixed << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
 				cout << "------\n";
 			}
 
 			else if (op == "*") {
 				result = x * y;
-				cout << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
+				cout << fixed << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
 				cout << "------\n";
 			}
 
 			else if (op == "/") {
 				if (y != 0) {
 					result = x / y;
-					cout << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
+					cout << fixed << "Result: " << first_value << " " << op << " " << second_value << " = " << result << endl;
 					cout << "------\n";
 				}
 				else {
@@ -81,25 +81,25 @@ int main() {
 
 			else if (op == "sin") {
 				result = sin(x * PI / 180);
-				cout << "Result: " << "sin(" << x << "°)" << " = " << result << endl;
+				cout << fixed << "Result: " << "sin(" << x << "°)" << " = " << result << endl;
 				cout << "------\n";
 			}
 
 			else if (op == "cos") {
 				result = cos(x * PI / 180);
-				cout << "Result: " << "cos(" << x << "°)" << " = " << result << endl;
+				cout << fixed << "Result: " << "cos(" << x << "°)" << " = " << result << endl;
 				cout << "------\n";
 			}
 
 			else if (op == "tan") {
 				result = tan(x * PI / 180);
-				cout << "Result: " << "tan(" << x << "°)" << " = " << result << endl;
+				cout << fixed << "Result: " << "tan(" << x << "°)" << " = " << result << endl;
 				cout << "------\n";
 			}
 
 			else if (op == "pow") {
 				result = pow(x, y);
-				cout << "Result: " << first_value << "^" << second_value << " = " << result << endl;
+				cout << fixed << "Result: " << first_value << "^" << second_value << " = " << result << endl;
 				cout << "------\n";
 			}
 
@@ -111,14 +111,14 @@ int main() {
 		else {
 			if (op == "help") {
 				cout << "\n* Mathematicals operators *\n";
-				cout << "'+': The addition operator. Example: 5 + 5 = 10\n";
-				cout << "'-': The subtraction operator. Example: 10 - 5 = 5\n";
-				cout << "'*': The multiplication operator. Example: 10 * 5 = 50\n";
-				cout << "'/': The division operator. Example: 10 + 2 = 5\n";
-				cout <<"'sin': The sinusoidal operator. Example: sin(90°) = 1\n";
-				cout <<"'cos': The cosine operator. Example: cos(90°) = 0\n";
-				cout <<"'tan': The tangent operator. Example: tan(45°) = 1\n";
-				cout <<"'pow': Exponentiation. Example: 5 ^ 5 = 3125\n";
+				cout << "'+': Adds two values Example: 5 + 5 = 10\n";
+				cout << "'-': Subtracting two values. Example: 10 - 5 = 5\n";
+				cout << "'*': Multiplication of two values. Example: 10 * 5 = 50\n";
+				cout << "'/': Dividing two values. Example: 10 + 2 = 5\n";
+				cout <<"'sin': Calculation of the sine. Example: sin(90°) = 1\n";
+				cout <<"'cos': Calculating the cosine. Example: cos(90°) = 0\n";
+				cout <<"'tan': Calculation of the tangent. Example: tan(45°) = 1\n";
+				cout <<"'pow': Exponentiation of a number. Example: 5 ^ 5 = 3125\n";
 				cout << "------\n";
 			}
 			else if (op == "about") {
