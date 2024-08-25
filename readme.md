@@ -1,4 +1,24 @@
-## CalculatorApp
+# CalculatorApp
+
 **CalculatorApp** is a calculator that allows you to perform simple mathematical calculations.
 
-![screenshot_1](https://sun9-12.userapi.com/impg/2ZAKJ0AHu1DSq4KZ9DrjrSI9DhTlWAgoHYlBmw/RX_s5x2wlB8.jpg?size=964x156&quality=95&sign=00bb6cfc77fc739f480055cfc12467f4&type=album)
+![screen](https://sun9-42.userapi.com/impg/YKKv3E4MonzxgtggebSy6fWCd0cTPJfNPOQxgA/EM4mlXMDuGw.jpg?size=1088x194&quality=95&sign=3093128d7a9897a9df6b17597300b0d3&type=album)
+
+## Functional
+
+### Mathematical operators
+
+- **'+'**: Adds two values: `5 + 5 = 10`
+- **'-'**: Subtracting two values: `25 - 10 = 15`
+- **'*'**: Multiplication of two values: `6 * 2 = 12`
+- **'/'**: Dividing two values: `100 / 2 = 50`
+- **'sin'**: Calculation of the sine: `sin(90°) = 1`
+- **'cos'**: Calculating the cosine: `cos(90°) = 0`
+- **'tan'**: Calculation of the tangent: `tan(45°) = 1`
+- **'pow'**: Exponentiation of a number: `5 ^ 5 = 3125`
+
+### Commands
+
+- **'help'** — Information about mathematical operators
+- **'about'** — Brief information about the application
+- **'exit'** — Exiting the application
