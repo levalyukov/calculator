@@ -6,17 +6,17 @@
 using namespace std;
 
 int main() {
-	string name = "\nCalculatorApp";
-	string version = "v0.9\n";
-	string operators = "'+', '-', '*', '/', 'sin', 'cos', 'tg', 'asin', 'acos', 'atg', 'pow' | Commands: 'help', 'about', 'exit'";
+	string name = "\nCalculator";
+	string version = "v1.0\n";
+	string operators = "'+', '-', '*', '/', 'sin', 'cos', 'tg', 'asin', 'acos', 'atg', 'atg2', 'pow' \nCommands: 'help', 'about', 'exit'";
 
-	cout << name << " " << version;
+	cout << name << endl;
 
 	while (true) {
 		double x, y, result;
 		string op, first_value, second_value;
 
-		cout << "\nAvailable  mathematical operators: " << operators << "\n" << endl;
+		cout << "\nMath operators: " << operators << "\n" << endl;
 		cout << "Enter math operator or command: ";
 		getline(cin, op);
 
@@ -115,6 +115,12 @@ int main() {
 				cout << "------\n";
 			}
 
+			else if (op == "atg2") {
+				result = atan2 (y,x) * 180 / PI;
+				cout << fixed << "Result: " << "arctg(" << first_value << ", " << second_value << ")" << " = " << result << "°" << endl;
+				cout << "------\n";
+			}
+
 			else if (op == "pow") {
 				result = pow(x, y);
 				cout << fixed << "Result: " << first_value << " ^ " << second_value << " = " << result << endl;
@@ -139,6 +145,7 @@ int main() {
 				cout <<"'asin': Compute arc sine. Example: arcsin(0.5) = 30°\n";
 				cout <<"'acos': Compute arc cosine. Example: arccos(0.5) = 60°\n";
 				cout <<"'atg': Compute arc tangent. Example: arctg(1) = 45°\n";
+				cout <<"'atg2': Compute arc tangent with two parameters. Example: atg2(-10, 10) = 135°\n";
 				cout <<"'pow': Raise to power. Example: 5 ^ 5 = 3125\n";
 				cout << "------\n";
 			}
