@@ -2,7 +2,7 @@
 
 Calculator that allows you to perform simple mathematical calculations
 
-![screen](https://sun9-42.userapi.com/impg/YKKv3E4MonzxgtggebSy6fWCd0cTPJfNPOQxgA/EM4mlXMDuGw.jpg?size=1088x194&quality=95&sign=3093128d7a9897a9df6b17597300b0d3&type=album)
+![screen](https://sun9-8.userapi.com/impg/oa4h2brVljTtHeOU3Jz7h34m3j5LMmEoYECgMQ/TQOxyNwokgs.jpg?size=977x237&quality=95&sign=9af0538dd61bf8fb438dc604d3ee83a5&type=album)
 
 ## Functional
 
