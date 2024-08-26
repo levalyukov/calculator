@@ -12,9 +12,12 @@
 - **'-'**: Subtracting two values: `25 - 10 = 15`
 - **'*'**: Multiplication of two values: `6 * 2 = 12`
 - **'/'**: Dividing two values: `100 / 2 = 50`
-- **'sin'**: Calculation of the sine: `sin(90°) = 1`
-- **'cos'**: Calculating the cosine: `cos(90°) = 0`
-- **'tan'**: Calculation of the tangent: `tan(45°) = 1`
+- **'sin'**: Compute sine: `sin(90°) = 1`
+- **'cos'**: Compute cosine: `cos(90°) = 0`
+- **'tg'**: Compute tangent: `tg(45°) = 1`
+- **'asin'**: Compute arc sine: `arcsin(0.5) = 30°`
+- **'acos'**: Compute arc cosine: `arccos(0.5) = 60°`
+- **'atg'**: Compute arc tangent: `arctg(1) = 45°`
 - **'pow'**: Exponentiation of a number: `5 ^ 5 = 3125`
 
 ### Commands
