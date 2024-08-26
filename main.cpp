@@ -152,7 +152,7 @@ int main() {
 			else if (op == "about") {
 				cout << name << " " << version << endl;
 				cout << "Programming language: C++\n";
-				cout << "GitHub: levalyukov/CalculatorApp-Cpp\n";
+				cout << "GitHub: levalyukov/calculator\n";
 				cout << "Used libraries:\n";
 				cout << "> math.h\n";
 				cout << "\nThank you for using our calculator!!! \n";
