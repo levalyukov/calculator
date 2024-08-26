@@ -55,7 +55,19 @@
         "variant": "cpp",
         "sstream": "cpp",
         "random": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "numbers": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

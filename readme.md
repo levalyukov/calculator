@@ -22,3 +22,6 @@
 - **'help'** — Information about mathematical operators
 - **'about'** — Brief information about the application
 - **'exit'** — Exiting the application
+
+## License
+Licensed under the MIT [license](license).

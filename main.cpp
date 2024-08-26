@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
 #include <math.h>
+#define PI 3.14159265
 
 using namespace std;
-#define PI 3.14159265
 
 int main() {
 	string name = "\nCalculatorApp";
-	string version = "v0.8\n";
-	string operators = "'+', '-', '*', '/', 'sin', 'cos', 'tg', 'pow' | Commands: 'help', 'about', 'exit'";
+	string version = "v0.9\n";
+	string operators = "'+', '-', '*', '/', 'sin', 'cos', 'tg', 'asin', 'acos', 'atg', 'pow' | Commands: 'help', 'about', 'exit'";
 
 	cout << name << " " << version;
 
@@ -21,7 +21,7 @@ int main() {
 		getline(cin, op);
 
 		if (op != "help" && op != "about" && op != "exit") {
-			if (op != "sin" && op != "cos" && op != "tg") {
+			if (op != "sin" && op != "cos" && op != "tg" && op != "asin" && op != "acos" && op != "atg") {
 				cout << "Enter first value: ";
 				getline(cin, first_value);
 				cout << "Enter second value: ";
@@ -32,7 +32,7 @@ int main() {
 				getline(cin, first_value);
 			}
 
-			if (op != "sin" && op != "cos" && op != "tg") {
+			if (op != "sin" && op != "cos" && op != "tg" && op != "asin" && op != "acos" && op != "atg") {
 				try {
 					x = stod(first_value);
 					y = stod(second_value);
@@ -81,25 +81,43 @@ int main() {
 
 			else if (op == "sin") {
 				result = sin(x * PI / 180);
-				cout << fixed << "Result: " << "sin(" << x << "°)" << " = " << result << endl;
+				cout << fixed << "Result: " << "sin(" << first_value << "°)" << " = " << result << endl;
 				cout << "------\n";
 			}
 
 			else if (op == "cos") {
 				result = cos(x * PI / 180);
-				cout << fixed << "Result: " << "cos(" << x << "°)" << " = " << result << endl;
+				cout << fixed << "Result: " << "cos(" << first_value << "°)" << " = " << result << endl;
 				cout << "------\n";
 			}
 
 			else if (op == "tg") {
 				result = tan(x * PI / 180);
-				cout << fixed << "Result: " << "tg(" << x << "°)" << " = " << result << endl;
+				cout << fixed << "Result: " << "tg(" << first_value << "°)" << " = " << result << endl;
+				cout << "------\n";
+			}
+
+			else if (op == "asin") {
+				result = asin (x) * 180.0 / PI;
+				cout << fixed << "Result: " << "arcsin(" << first_value << ")" << " = " << result << "°" << endl;
+				cout << "------\n";
+			}
+
+			else if (op == "acos") {
+				result = acos (x) * 180.0 / PI;
+				cout << fixed << "Result: " << "arccos(" << first_value << ")" << " = " << result << "°" << endl;
+				cout << "------\n";
+			}
+
+			else if (op == "atg") {
+				result = atan (x) * 180.0 / PI;
+				cout << fixed << "Result: " << "arctg(" << first_value << ")" << " = " << result << "°" << endl;
 				cout << "------\n";
 			}
 
 			else if (op == "pow") {
 				result = pow(x, y);
-				cout << fixed << "Result: " << first_value << "^" << second_value << " = " << result << endl;
+				cout << fixed << "Result: " << first_value << " ^ " << second_value << " = " << result << endl;
 				cout << "------\n";
 			}
 
@@ -115,17 +133,22 @@ int main() {
 				cout << "'-': Subtracting two values. Example: 10 - 5 = 5\n";
 				cout << "'*': Multiplication of two values. Example: 10 * 5 = 50\n";
 				cout << "'/': Dividing two values. Example: 10 + 2 = 5\n";
-				cout <<"'sin': Calculation of the sine. Example: sin(90°) = 1\n";
-				cout <<"'cos': Calculating the cosine. Example: cos(90°) = 0\n";
-				cout <<"'tan': Calculation of the tangent. Example: tan(45°) = 1\n";
-				cout <<"'pow': Exponentiation of a number. Example: 5 ^ 5 = 3125\n";
+				cout <<"'sin': Compute sine. Example: sin(90°) = 1\n";
+				cout <<"'cos': Compute cosine. Example: cos(90°) = 0\n";
+				cout <<"'tg': Compute tangent. Example: tg(45°) = 1\n";
+				cout <<"'asin': Compute arc sine. Example: arcsin(0.5) = 30°\n";
+				cout <<"'acos': Compute arc cosine. Example: arccos(0.5) = 60°\n";
+				cout <<"'atg': Compute arc tangent. Example: arctg(1) = 45°\n";
+				cout <<"'pow': Raise to power. Example: 5 ^ 5 = 3125\n";
 				cout << "------\n";
 			}
 			else if (op == "about") {
 				cout << name << " " << version << endl;
 				cout << "Programming language: C++\n";
 				cout << "GitHub: levalyukov/CalculatorApp-Cpp\n";
-				cout << "Thank you for using our calculator. ❤️\n";
+				cout << "Used libraries:\n";
+				cout << "> math.h\n";
+				cout << "\nThank you for using our calculator!!! \n";
 				cout << "------\n";
 			}
 			else if (op == "exit") {
@@ -136,6 +159,4 @@ int main() {
 			}
 		}
 	}
-	
-	return 0;
 }
