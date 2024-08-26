@@ -23,9 +23,9 @@ Calculator that allows you to perform simple mathematical calculations
 
 ### Commands
 
-- **'help'** — Information about mathematical operators
-- **'about'** — Brief information about the application
-- **'exit'** — Exiting the application
+- **'help'**: Information about mathematical operators
+- **'about'**: Brief information about the application
+- **'exit'**: Exiting the application
 
 ## License
 
