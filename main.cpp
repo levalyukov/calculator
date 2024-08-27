@@ -7,8 +7,9 @@ using namespace std;
 
 int main() {
 	string name = "\nCalculator";
-	string version = "v1.0\n";
-	string operators = "'+', '-', '*', '/', 'sin', 'cos', 'tg', 'asin', 'acos', 'atg', 'atg2', 'pow' \nCommands: 'help', 'about', 'exit'";
+	string version = "v1.1\n";
+	string operators = "'+', '-', '*', '/', 'sin', 'cos', 'tg', 'asin', 'acos', 'atg', 'atg2', 'pow'";
+	string commands = "Commands: 'help', 'about', 'exit'";
 
 	cout << name << endl;
 
@@ -16,7 +17,7 @@ int main() {
 		double x, y, result;
 		string op, first_value, second_value;
 
-		cout << "\nMath operators: " << operators << "\n" << endl;
+		cout << "\nMath operators: " << operators << "\n" << commands << "\n" << endl;
 		cout << "Enter math operator or command: ";
 		getline(cin, op);
 
